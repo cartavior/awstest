@@ -27,7 +27,7 @@ jobs:
           role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
           aws-region: ${{ vars.AWS_REGION }}
       # CloudFormation Lint
-       - name: Cfn Lint
+      - name: Cfn Lint
         id: cfn-lint
         uses: scottbrenner/cfn-lint-action@v2
 
@@ -38,7 +38,7 @@ jobs:
           cfn-lint --version
           cfn-lint -t ./templates/*.yaml
       # CloudFormation Static Analysis
-       - name: Cfn Nag
+      - name: Cfn Nag
         id: cfn-nag
         uses: stelligent/cfn_nag@master
         with:
